@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {axiosWithAuth} from '../utils/axiosWithAuth'
+import DashboardStyle from '../styling/dashboardstyle'
 
 //Components
 import Friend from './Friend'
@@ -26,14 +27,17 @@ getData = () => {
 }
     render()  {
         return(
-            <div>
+            <DashboardStyle>
+                <h1>Friends List</h1>
                 {this.state.friends.map(friend => (
+                    <div>
                     <Friend 
                     key= {friend.id}
                     friend= {friend}
                     />
+                    </div>
                 ))}    
-            </div>
+            </DashboardStyle>
         )
     }
     

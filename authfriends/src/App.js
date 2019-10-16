@@ -1,8 +1,9 @@
 import React from 'react';
 import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom';
 import PrivateRoute from './utils/PrivateRoute'
-
 import './App.css';
+import NavStyle from './styling/navstyle'
+
 //Components
 import Friends from './components/FriendsList'
 import Login from './components/LoginFriends'
@@ -14,7 +15,7 @@ function App() {
   }
   return (
     <Router>
-    <div className="App">
+    <NavStyle className="App">
     <nav>
                 <Link to ='/login' onClick= {handleLogout}>Login</Link>
                 <Link to ='/dashboard'>Dashboard</Link>
@@ -25,7 +26,7 @@ function App() {
 <PrivateRoute exact path='/dashboard' component={Friends}/>
 <PrivateRoute exact path='/addfriend' component={FriendForm}/>
 </Switch>
-    </div>
+    </NavStyle>
     </Router>
   );
 }

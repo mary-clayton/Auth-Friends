@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import { axiosWithAuth } from '../utils/axiosWithAuth';
+import FormStyle from '../styling/formstyle';
 
 
  const FriendForm = (props) => {
@@ -23,8 +24,9 @@ import { axiosWithAuth } from '../utils/axiosWithAuth';
         const friendName = e.target.name;
         setNewFriend({...newFriend, [friendName]: e.target.value})
     }
+
     return (
-        <div>
+        <FormStyle>
             <h1>Add New Friend</h1>
             <form>
             <input type="text" name="name" placeholder="name.." onChange={handleChanges} required/>
@@ -32,7 +34,7 @@ import { axiosWithAuth } from '../utils/axiosWithAuth';
             <input type= "email" name="email" placeholder="email.." onChange={handleChanges} required/>
             <button onClick={handleSubmit}> Add friend </button>
             </form>
-        </div>
+        </FormStyle>
     )
 }
 export default FriendForm;

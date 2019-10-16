@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { axiosWithAuth } from '../utils/axiosWithAuth'
+import LoginStyle from '../styling/loginstyle'
 
 class Login extends Component {
     constructor()
@@ -7,7 +8,8 @@ class Login extends Component {
      this.state = {
         credentials: {
             username: '',
-            password: ''
+            password: '',
+            isLoading: false
         }
     }; //end state
  }
@@ -30,13 +32,16 @@ class Login extends Component {
         })
         .catch(err => console.log(err.response))
     }; //end login event
-    
-    // logout() {
-    //     localStorage.clear();
-    // }
+
     render() {
+        if (this.state.isLoading) 
+        {
+            return (<div><h1>Loading...</h1></div>)
+        }
+        else{
         return (
-            <div>
+            <LoginStyle className="Login">
+                <h1>Auth Friends</h1>
                 <form onSubmit={this.login}>
                     <label>Username:</label>
                     <input 
@@ -53,10 +58,11 @@ class Login extends Component {
                      onChange={this.handleChange} required
                      />
                      <button>Log in</button>
+      )}
                 </form>
-                {/* <button className="logout" onClick= {this.logout()}>Log Out</button> */}
-            </div>
+            </LoginStyle>
         )
+        }
     }
 
 } // end Login

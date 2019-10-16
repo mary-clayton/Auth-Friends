@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
+
+.App {
+  text-align: center;
+  font-family: Raleway, arial;
+}
+
+body {
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.20)), url('./components/img/friends.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}

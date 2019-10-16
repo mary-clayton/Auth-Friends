@@ -3,15 +3,12 @@ import { axiosWithAuth } from '../utils/axiosWithAuth'
 import LoginStyle from '../styling/loginstyle'
 
 class Login extends Component {
-    constructor()
- {    super();
-     this.state = {
+     state = {
+        isLoading: false,
         credentials: {
             username: '',
-            password: '',
-            isLoading: false
+            password: ''
         }
-    }; //end state
  }
     handleChange = e => {
         this.setState({
@@ -35,10 +32,12 @@ class Login extends Component {
 
     render() {
         if (this.state.isLoading) 
-        {
-            return (<div><h1>Loading...</h1></div>)
-        }
-        else{
+            return (
+            <div>
+                <h1>Loading...</h1>
+            </div>
+                )
+        else {
         return (
             <LoginStyle className="Login">
                 <h1>Auth Friends</h1>
@@ -64,7 +63,6 @@ class Login extends Component {
         )
         }
     }
-
 } // end Login
 
 export default Login;

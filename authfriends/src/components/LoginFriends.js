@@ -57,7 +57,6 @@ class Login extends Component {
                      onChange={this.handleChange} required
                      />
                      <button>Log in</button>
-      )}
                 </form>
             </LoginStyle>
         )
